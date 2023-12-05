@@ -1,0 +1,28 @@
+[
+    {
+        "place" : "Jaipur, India",
+        "duration" : "1 week",
+        "cost" : 5686,
+        "imgUrl" : "p1.webp"
+    },
+    {        "place" : "Gokarna, India",
+        "duration" : "1 week",
+        "cost" : 5686,
+        "imgUrl" : "p1.webp"},
+    {        "place" : "Kerala, India",
+        "duration" : "1 week",
+        "cost" : 5686,
+        "imgUrl" : "p1.webp"},
+    {        "place" : "Manali, India",
+        "duration" : "1 week",
+        "cost" : 5686,
+        "imgUrl" : "p1.webp"},
+    {        "place" : "Goa, India",
+        "duration" : "1 week",
+        "cost" : 5686,
+        "imgUrl" : "p1.webp"},
+    {        "place" : "Ooty, India",
+        "duration" : "1 week",
+        "cost" : 5686,
+        "imgUrl" : "p1.webp"    }
+]

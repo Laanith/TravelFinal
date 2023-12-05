@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    vertical-align: middle;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+
+

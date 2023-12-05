@@ -1,0 +1,50 @@
+[
+  {
+    "place": "Jaipur, India",
+    "plan": {
+      "quick": { "duration": "3 days/ 3 nights", "price": 4500 },
+      "standard": { "duration": "5 days/ 5 nights", "price": 7000 },
+      "extended": { "duration": "9 days/ 9 nights", "price": 14000 }
+    }
+  },
+  {
+    "place": "Gokarna, India",
+    "plan": {
+      "quick": { "duration": "3 days/ 3 nights", "price": 4500 },
+      "standard": { "duration": "5 days/ 5 nights", "price": 7000 },
+      "extended": { "duration": "9 days/ 9 nights", "price": 14000 }
+    }
+  },
+  {
+    "place": "Kerala, India",
+    "plan": {
+      "quick": { "duration": "3 days/ 3 nights", "price": 4500 },
+      "standard": { "duration": "5 days/ 5 nights", "price": 7000 },
+      "extended": { "duration": "9 days/ 9 nights", "price": 14000 }
+    }
+  },
+  {
+    "place": "Manali, India",
+    "plan": {
+      "quick": { "duration": "3 days/ 3 nights", "price": 4500 },
+      "standard": { "duration": "5 days/ 5 nights", "price": 7000 },
+      "extended": { "duration": "9 days/ 9 nights", "price": 14000 }
+    }
+  },
+  {
+    "place": "Goa, India",
+    "plan": {
+      "quick": { "duration": "3 days/ 3 nights", "price": 4500 },
+      "standard": { "duration": "5 days/ 5 nights", "price": 7000 },
+      "extended": { "duration": "9 days/ 9 nights", "price": 14000 }
+    }
+  },
+  {
+    "place": "Ooty, India",
+    "plan": {
+      "quick": { "duration": "3 days/ 3 nights", "price": 4500 },
+      "standard": { "duration": "5 days/ 5 nights", "price": 7000 },
+      "extended": { "duration": "9 days/ 9 nights", "price": 14000 }
+    }
+  }
+]
