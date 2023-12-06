@@ -12,7 +12,7 @@ function Header() {
           <ul className="flex flex-row align-middle">
             <li>Home</li>
             <li>Contact</li>
-            <li>About Us</li>
+            <li>About us</li>
           </ul>
         </div>
       </div>

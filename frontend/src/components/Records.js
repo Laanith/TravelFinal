@@ -1,7 +1,10 @@
 import Footer from "./Footer";
 import Header from "./Header";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+const serverUrl = "http://localhost:8000";
 
 function Records(props) {
   const navigate = useNavigate();
@@ -11,7 +14,25 @@ function Records(props) {
     console.log("Iterinary", props.iterinary);
     console.log("hotel", props.hotel);
     console.log("place", props.place);
-  }, []);
+
+    if (props.finalDetails) {
+      axios
+        .post(serverUrl + "/userBookings", props.finalDetails)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .then((err) => {
+          console.error(err);
+        });
+    }
+  }, [
+    props.user,
+    props.train,
+    props.iterinary,
+    props.finalDetails,
+    props.hotel,
+    props.place,
+  ]);
 
   function showDetails() {
     let date = document.getElementById("date").value;
@@ -29,6 +50,7 @@ function Records(props) {
     };
     console.log("FinalDetails :", finalDetails);
     props.setFinalDetails(finalDetails);
+    alert("Payment details and transport links are sent to your email");
   }
 
   return (
@@ -64,60 +86,73 @@ function Records(props) {
             </p>
           </div>
         ) : (
-          <div className="flex flex-col align-middle justify-center mx-auto">
-            <p className="font-semibold">Summary :</p>
-            <p>
-              <strong>Iterinary : </strong>
-              {props.finalDetails.plan}
-            </p>
-            <p>
-              <strong>Destination : </strong>
-              {props.finalDetails.place}
-            </p>
-            <p>
-              <strong>Base-Price : </strong>
-              {props.finalDetails.price}
-            </p>
-            <p>
-              <strong>Duration : </strong>
-              {props.finalDetails.duration}
-            </p>
-            <p>
-              <strong>Username : </strong>
-              {props.finalDetails.username}
-            </p>
-            <p>
-              <strong>Email : </strong>
-              {props.finalDetails.email}
-            </p>
-            <p>
-              <strong>Number of people travelling : </strong>
-              {props.finalDetails.number_of_people}
-            </p>
-            <p>
-              <strong> Hotel : </strong>
-              {props.hotel.hotel}
-            </p>{" "}
-            <p>
-              <strong> Hotel Price </strong>
-              {props.hotel.price}
-            </p>
-            <p>
-              <strong> Train : </strong>
-              {props.train.train_name}
-            </p>{" "}
-            <p>
-              <strong> Train Number : </strong>
-              {props.train.train_number}
-            </p>
-            <p className="text-green-800 font-bold">
-              <strong className="text-black mx-[5px]">Message : </strong>You'll
-                receive an email containing links for the overall payment,
-                <br/>
-              reserving train seats, and gathering details of accompanying
-              travelers.
-            </p>
-          </div>
+          <>
+            <div className="flex flex-col align-middle justify-center mx-auto">
+              <p className="font-semibold">Summary :</p>
+              <p>
+                <strong>Iterinary : </strong>
+                {props.finalDetails.plan}
+              </p>
+              <p>
+                <strong>Destination : </strong>
+                {props.finalDetails.place}
+              </p>
+              <p>
+                <strong>Base-Price : </strong>
+                {props.finalDetails.price}
+              </p>
+              <p>
+                <strong>Duration : </strong>
+                {props.finalDetails.duration}
+              </p>
+              <p>
+                <strong>Username : </strong>
+                {props.finalDetails.username}
+              </p>
+              <p>
+                <strong>Email : </strong>
+                {props.finalDetails.email}
+              </p>
+              <p>
+                <strong>Number of people travelling : </strong>
+                {props.finalDetails.number_of_people}
+              </p>
+              <p>
+                <strong> Hotel : </strong>
+                {props.hotel.hotel}
+              </p>{" "}
+              <p>
+                <strong> Hotel Price </strong>
+                {props.hotel.price}
+              </p>
+              <p>
+                <strong> Train : </strong>
+                {props.train.train_name}
+              </p>{" "}
+              <p>
+                <strong> Train Number : </strong>
+                {props.train.train_number}
+              </p>
+              <p className="text-green-800 font-bold">
+                <strong className="text-black mx-[5px]">Message : </strong>
+                You'll receive an email containing links for the overall
+                payment,
+                <br />
+                reserving train seats, and gathering details of accompanying
+                travelers.
+              </p>
+            </div>
+            <div className="mx-auto flex flex-row justify-center">
+                <span
+                  className="bg-black p-[15px] justify-center my-auto text-center text-white py-[5px] rounded-[10px] m-[10px] cursor-pointer"
+                  onClick={() => {
+                    navigate("/allUserBookings")
+                  }}
+                >
+                  View Bookings
+              </span>
+            </div>
+          </>
         )}
 
         {props.finalDetails === null ? (

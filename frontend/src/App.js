@@ -9,6 +9,7 @@ import DetailsPage from './components/DetailsPage';
 import Records from './components/Records';
 import Trains from './components/Trains';
 import Hotels from './components/Hotels';
+import ViewBookings from './components/ViewBookings';
 
 
 
@@ -20,6 +21,7 @@ function App() {
   const [iterinary, setIterinary] = useState(null);
   const [hotel, setHotel] = useState(null);
   const [finalDetails, setFinalDetails] = useState(null);
+  const [userBookings, setUserBookings] = useState(null);
 
 
   return (
@@ -30,7 +32,7 @@ function App() {
           path="/login"
           element={<Login user={user} setUserData={setUserData}></Login>}
         ></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/register" element={<Register setUserData={setUserData}></Register>}></Route>
         <Route
           path="/mainpage"
           element={
@@ -75,15 +77,31 @@ function App() {
         <Route
           path="/bookings"
           element={
-            <Hotels place={place} user={user} train={train} setTrain={setTrain} setIterinary={setIterinary} iterinary={iterinary} setHotel={setHotel} hotel={hotel}></Hotels>
+            <Hotels
+              place={place}
+              user={user}
+              train={train}
+              setTrain={setTrain}
+              setIterinary={setIterinary}
+              iterinary={iterinary}
+              setHotel={setHotel}
+              hotel={hotel}
+            ></Hotels>
           }
         ></Route>
         <Route
           path="/transport"
           element={
-            <Trains place={place} user={user} setTrain={setTrain} setSelectedPlace={setSelectedPlace} train={train}></Trains>
+            <Trains
+              place={place}
+              user={user}
+              setTrain={setTrain}
+              setSelectedPlace={setSelectedPlace}
+              train={train}
+            ></Trains>
           }
         ></Route>
+        <Route path="/allUserBookings" element={<ViewBookings user={user}></ViewBookings>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -73,18 +73,18 @@ function Trains(props){
                 ></TrainDetails>
               );
             })}
-            </div>
-            <div className="flex flex-row justify-center">
-                <span
-                    className="bg-black block w-[10%] justify-center mx-auto text-center text-white py-[5px] rounded-[10px] m-[10px] cursor-pointer"
-                    onClick={() => {
-                        navigate("/mainpage");
-                        props.setSelectedPlace(null);  
-                    }}
-                >
-                    Go Back
-                </span>
-            </div>
+        </div>
+        <div className="flex flex-row justify-center">
+          <span
+            className="bg-black block w-[10%] justify-center mx-auto text-center text-white py-[5px] rounded-[10px] m-[10px] cursor-pointer"
+            onClick={() => {
+              navigate("/mainpage");
+              props.setSelectedPlace(null);
+            }}
+          >
+            Go Back
+          </span>
+        </div>
         <Footer></Footer>
       </div>
     );

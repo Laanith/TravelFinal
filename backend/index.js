@@ -88,6 +88,18 @@ app.get("/hotels", (req, res) => {
         }
 });
 
+
+
+app.post("/userBookings", DBF.appendBookingToDatabase);
+
+
+
+app.post("/allUserBookings", DBF.getAllUserBookings)
+
+
+
+app.post("/deleteBookings", DBF.deleteBookings);
+
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

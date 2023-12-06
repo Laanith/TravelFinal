@@ -51,7 +51,13 @@ function MainPage(props) {
             </div>
             <div className="flex w-full overflow-x-auto card-shower">
               {destinationData.map((item) => {
-                return <Card item={item} setSelectedPlace={props.setSelectedPlace} place={props.place}></Card>;
+                return (
+                  <Card
+                    item={item}
+                    setSelectedPlace={props.setSelectedPlace}
+                    place={props.place}
+                  ></Card>
+                );
               })}
             </div>
           </>
